@@ -51,3 +51,72 @@ Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa  Su Mo Tu We Th Fr Sa
 [parth@parth-Lenovo-Y40-70 ~]$ date
 Mon Jul 22 15:39:09 EDT 2019
 [parth@parth-Lenovo-Y40-70 ~]$ 
+
+[parth@parth-Lenovo-Y40-70 Linux]$ which echo
+/bin/echo
+[parth@parth-Lenovo-Y40-70 Linux]$ which which
+/usr/bin/which
+
+[parth@parth-Lenovo-Y40-70 Linux]$ man lcf
+
+[parth@parth-Lenovo-Y40-70 Linux]$ help cd
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -l --human-readable
+
+>rm file1.txt file2.txt
+
+
+*******************************
+
+Input output:
+
+>cat 1> output.txt
+Hello
+
+>cat 1>> output.txt
+How are you!
+
+>cat -k 2> error.txt
+
+>cat -k 2>> error.txt
+
+>cat 1>> output.txt 2>> error.txt
+Linux is amazing!
+
+>cat > input.txt
+
+>cat < input.txt
+
+>cat < input.txt > hello.txt
+
+
+********************************
+
+Piping xargs:
+
+[parth@parth-Lenovo-Y40-70 Linux]$ date
+Tue Jul 23 15:06:52 PDT 2019
+[parth@parth-Lenovo-Y40-70 Linux]$ date | cut --delimiter=" " --fields=1
+Tue
+[parth@parth-Lenovo-Y40-70 Linux]$ date | tee fulldate.txt | cut --delimiter=" " --fields=1
+Tue
+[parth@parth-Lenovo-Y40-70 Linux]$ date | cut --delimiter=" " --fields=1 | xargs echo
+Tue
+
+********************************
+
+File System:
+
+>ls
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -F
+Command-Synopsis-Cheat-Sheet.pdf  fulldate.txt  LinuxDoc.txt  Manual-Structure-Cheat-Sheet.pdf  README.md  testfolder/
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -l
+total 888
+-rw-rw-r-- 1 parth parth 590267 Jul 22 16:39 Command-Synopsis-Cheat-Sheet.pdf
+-rw-rw-r-- 1 parth parth     29 Jul 23 15:18 fulldate.txt
+-rw-rw-r-- 1 parth parth   3769 Jul 23 17:09 LinuxDoc.txt
+-rw-rw-r-- 1 parth parth 296688 Jul 22 16:39 Manual-Structure-Cheat-Sheet.pdf
+-rw-rw-r-- 1 parth parth      7 Jul 22 12:10 README.md
+drwxrwxr-x 2 parth parth   4096 Jul 23 17:08 testfolder
+
