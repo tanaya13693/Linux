@@ -120,3 +120,33 @@ total 888
 -rw-rw-r-- 1 parth parth      7 Jul 22 12:10 README.md
 drwxrwxr-x 2 parth parth   4096 Jul 23 17:08 testfolder
 
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -a
+.  ..  .bash_aliases  Command-Synopsis-Cheat-Sheet.pdf  fulldate.txt  .git  LinuxDoc.txt  Manual-Structure-Cheat-Sheet.pdf  README.md  testfolder
+[parth@parth-Lenovo-Y40-70 Linux]$ pwd
+/home/parth/linuxCourse/Linux
+[parth@parth-Lenovo-Y40-70 Linux]$ cd ..
+
+
+*********************************
+
+$cd /
+$cd /home/parth
+
+[parth@parth-Lenovo-Y40-70 ~]$ ls cogent/ Desktop/
+
+
+##### File Regex #####
+$ls *
+
+$ls *.txt
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls file[12345].txt
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls file[0-9A-Z].txt
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls file[0-9][A-Z][a-z].txt
+
+
+**********************************
+
+
