@@ -149,4 +149,215 @@ $ls *.txt
 
 **********************************
 
+Creating files and folders:
+
+[parth@parth-Lenovo-Y40-70 Linux]$ touch file2.pdf
+[parth@parth-Lenovo-Y40-70 Linux]$ touch ~/Documents/file2.pdf
+[parth@parth-Lenovo-Y40-70 Linux]$ echo "hello" > hello.txt
+
+
+[parth@parth-Lenovo-Y40-70 Linux]$ mkdir testFolder
+[parth@parth-Lenovo-Y40-70 Linux]$ mkdir ~/Documents/testFolder
+[parth@parth-Lenovo-Y40-70 Linux]$ mkdir happy birthday
+[parth@parth-Lenovo-Y40-70 Linux]$ mkdir "happy birthday"
+
+
+[parth@parth-Lenovo-Y40-70 Linux]$ mkdir {jan,feb,mar,apr}..{2017}
+[parth@parth-Lenovo-Y40-70 Linux]$ touch {jan,feb,mar}_{2017}.txt
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls {jan,feb,mar,apr}..{2017} > hello.txt
+
+[parth@parth-Lenovo-Y40-70 Linux]$ rm file2.pdf
+[parth@parth-Lenovo-Y40-70 Linux]$ rm *.txt
+
+[parth@parth-Lenovo-Y40-70 Linux]$ rm -r happy
+
+[parth@parth-Lenovo-Y40-70 Linux]$ mv directory1 directory2
+
+***********************************
+
+#Editing files using nano command:
+
+
+[parth@parth-Lenovo-Y40-70 Linux]$ nano diary.txt
+
+***********************************
+
+Locate files:
+
+[parth@parth-Lenovo-Y40-70 Linux]$ locate *.txt
+
+[parth@parth-Lenovo-Y40-70 Linux]$ locate /home/parth/linuxCourse/Linux/*.txt
+
+Case in-sensitive and limit the result:
+[parth@parth-Lenovo-Y40-70 Linux]$ locate -i --limit 3 *.txt
+
+Infomration about path to database:
+[parth@parth-Lenovo-Y40-70 Linux]$ locate -S
+Database /var/lib/mlocate/mlocate.db:
+	157,796 directories
+	1,177,645 files
+	113,038,843 bytes in file names
+	48,879,910 bytes used to store database
+
+Update database:
+[parth@parth-Lenovo-Y40-70 Linux]$ locate /home/parth/linuxCourse/Linux/*.txt
+/home/parth/linuxCourse/Linux/LinuxDoc.txt
+/home/parth/linuxCourse/Linux/file1.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ touch findme.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ locate findme.txt 
+[parth@parth-Lenovo-Y40-70 Linux]$ updatedb
+updatedb: can not open a temporary file for `/var/lib/mlocate/mlocate.db'
+[parth@parth-Lenovo-Y40-70 Linux]$ sudo updatedb
+[sudo] password for parth: 
+[parth@parth-Lenovo-Y40-70 Linux]$ updatedb
+updatedb: can not open a temporary file for `/var/lib/mlocate/mlocate.db'
+[parth@parth-Lenovo-Y40-70 Linux]$ locate findme.txt 
+/home/parth/linuxCourse/Linux/findme.txt
+
+
+************************************
+
+Find:
+
+[parth@parth-Lenovo-Y40-70 Linux]$ find
+[parth@parth-Lenovo-Y40-70 Linux]$ find /etc
+
+
+Find vs Locate:
+Before executing locate command, you need to update the database else results can be inaccurate.
+
+To limit the folder level:
+[parth@parth-Lenovo-Y40-70 Linux]$ find . -maxdepth 1
+
+To get just the files:
+[parth@parth-Lenovo-Y40-70 Linux]$ find find . -type f
+
+[parth@parth-Lenovo-Y40-70 Linux]$ find . -name "file1.txt"
+[parth@parth-Lenovo-Y40-70 Linux]$ find . -maxdepth 1 -name "file1.txt"
+[parth@parth-Lenovo-Y40-70 Linux]$ find . -maxdepth 1 -name "*.txt"
+[parth@parth-Lenovo-Y40-70 Linux]$ find . -maxdepth 1 -name "file?.txt"
+[parth@parth-Lenovo-Y40-70 Linux]$ find / -type f -size +100k
+[parth@parth-Lenovo-Y40-70 Linux]$ find / -type f -size +100k -size +5M
+
+[parth@parth-Lenovo-Y40-70 Linux]$ find -name "*.txt"
+
+[parth@parth-Lenovo-Y40-70 Linux]$ find -iname "*.txt"
+
+**************************************
+
+[parth@parth-Lenovo-Y40-70 Linux]$ cat file[1-2].txt > file3.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ cat file3.txt
+hello
+hello2
+[parth@parth-Lenovo-Y40-70 Linux]$ cat file[1-2].txt | tac
+hello2
+hello
+[parth@parth-Lenovo-Y40-70 Linux]$ cat file[1-2].txt | tac
+
+
+**************************************
+
+
+[parth@parth-Lenovo-Y40-70 Linux]$ find -name "*.txt" | head -n 2
+
+[parth@parth-Lenovo-Y40-70 Linux]$ find -name "*.txt" | head -n 2 | tac
+
+[parth@parth-Lenovo-Y40-70 Linux]$ find -name "*.txt" | tail -n 2
+
+
+**************************************
+
+Sorting:
+
+[parth@parth-Lenovo-Y40-70 Linux]$ sort words.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ sort words.txt > sorted.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ sort -r words.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ sort -n numbers.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ sort -nr numbers.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ sort -n -u numbers.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -l /etc | head -n 10
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -l /etc | head -n 10 | sort -k 5n
+
+**************************************
+
+Searching File Content:
+
+[parth@parth-Lenovo-Y40-70 Linux]$ grep e file1.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ grep -c e file1.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ grep -c -i e file1.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ grep -c -i "how" file1.txt
+[parth@parth-Lenovo-Y40-70 Linux]$ grep -v e file1.txt
+
+
+[parth@parth-Lenovo-Y40-70 Linux]$ grep -c e file1.txt file2.txt
+file1.txt:1
+file2.txt:1
+[parth@parth-Lenovo-Y40-70 Linux]$ grep -i e file1.txt file2.txt
+file1.txt:helllo there how are you
+file2.txt:hello there how are you
+
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -lF
+total 984
+drwxrwxr-x 2 parth parth   4096 Jul 25 14:18 apr..{2017}/
+drwxrwxr-x 2 parth parth   4096 Jul 25 13:57 birthday/
+-rw-rw-r-- 1 parth parth 590267 Jul 22 16:39 Command-Synopsis-Cheat-Sheet.pdf
+-rw-rw-r-- 1 parth parth     26 Jul 25 17:12 diary.txt
+drwxrwxr-x 2 parth parth   4096 Jul 25 14:18 feb..{2017}/
+-rw-rw-r-- 1 parth parth     25 Jul 28 17:42 file1.txt
+-rw-rw-r-- 1 parth parth     24 Jul 29 11:59 file2.txt
+-rw-rw-r-- 1 parth parth     13 Jul 28 16:14 file3.txt
+-rw-rw-r-- 1 parth parth      0 Jul 25 17:27 findme.txt
+drwxrwxr-x 3 parth parth   4096 Jul 25 15:07 folder2/
+drwxrwxr-x 2 parth parth   4096 Jul 25 13:57 happy birthday/
+-rw-rw-r-- 1 parth parth  23984 Jul 28 17:27 how-I-made-them.pdf
+drwxrwxr-x 2 parth parth   4096 Jul 25 14:18 jan..{2017}/
+-rw-rw-r-- 1 parth parth   9620 Jul 29 12:01 LinuxDoc.txt
+-rw-rw-r-- 1 parth parth 296688 Jul 22 16:39 Manual-Structure-Cheat-Sheet.pdf
+drwxrwxr-x 2 parth parth   4096 Jul 25 14:18 mar..{2017}/
+-rw-rw-r-- 1 parth parth    200 Jul 28 17:26 numbers0-9.txt
+-rw-rw-r-- 1 parth parth    565 Jul 28 17:26 numbers.txt
+-rw-rw-r-- 1 parth parth      7 Jul 22 12:10 README.md
+-rw-rw-r-- 1 parth parth    933 Jul 28 17:28 sorted.txt
+drwxrwxr-x 2 parth parth   4096 Jul 23 17:08 testfolder/
+drwxrwxr-x 2 parth parth   4096 Jul 25 13:56 testFolder/
+-rw-rw-r-- 1 parth parth    779 Jul 28 17:27 word-generator.sh
+-rw-rw-r-- 1 parth parth    933 Jul 28 17:24 words.txt
+
+
+[parth@parth-Lenovo-Y40-70 Linux]$ ls -lF / | grep bin/ | sort -r
+
+
+*****************************************
+
+
+File archiving and compression:
+
+###Create a tarball###
+[parth@parth-Lenovo-Y40-70 Linux]$ tar -cvf ourarchive.tar file[1-3].txt
+file1.txt
+file2.txt
+file3.txt
+
+
+###Extract a tarball###
+[parth@parth-Lenovo-Y40-70 Linux]$ tar -xvf ourarchive.tar 
+file1.txt
+file2.txt
+file3.txt
+
+
+###Compress a tarball###
+[parth@parth-Lenovo-Y40-70 Linux]$ gzip ourarchive.tar.gz 
+[parth@parth-Lenovo-Y40-70 Linux]$ gunzip ourarchive.tar.gz 
+
+
+[parth@parth-Lenovo-Y40-70 bashScripts]$ nano our_script1.sh
+[parth@parth-Lenovo-Y40-70 bashScripts]$ bash our_script1.sh
+Hello World!
+
+
+
+
 
