@@ -348,6 +348,9 @@ file2.txt
 file3.txt
 
 
+### To view items in tarball ###
+[parth@parth-Lenovo-Y40-70 bashScripts]$ tar -tf backup.tar.gz
+
 ###Compress a tarball###
 [parth@parth-Lenovo-Y40-70 Linux]$ gzip ourarchive.tar.gz 
 [parth@parth-Lenovo-Y40-70 Linux]$ gunzip ourarchive.tar.gz 
@@ -357,6 +360,38 @@ file3.txt
 [parth@parth-Lenovo-Y40-70 bashScripts]$ bash our_script1.sh
 Hello World!
 
+
+[parth@parth-Lenovo-Y40-70 bashScripts]$ chmod +x backup.sh
+
+
+*******************************************
+
+### CRON Job ###
+[parth@parth-Lenovo-Y40-70 cron]$ select-editor
+
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/ed
+  2. /bin/nano        <---- easiest
+  3. /usr/bin/emacs24
+  4. /usr/bin/vim.basic
+  5. /usr/bin/vim.tiny
+
+Choose 1-5 [2]: 2
+[parth@parth-Lenovo-Y40-70 cron]$ crontab -e
+no crontab for parth - using an empty one
+crontab: installing new crontab
+
+
+# m h  dom mon dow   command
+
+
+  * *   *   *   *    echo "Hello World" >> ~/Desktop/hello.txt
+
+#Another example:
+  */15 * */3 * * echo "Hello World"
+    */15 * */3 * * echo helloWorld.sh 
+
+Reference: https://crontab.guru/
 
 
 
