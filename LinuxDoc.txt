@@ -394,5 +394,61 @@ crontab: installing new crontab
 Reference: https://crontab.guru/
 
 
+*********************************************
+
+###Mastering Open Source Software###
+
+uname -o
+
+*********************************************
+
+###Compiling Software from source code###
+
+Install GNU libraries from gnu.org. E.g. coreutils-7.1-xz
+Go to src folder of the directory
+Inside e.g. ls.c, in main function add a statement - printf("Hello World"). 
+Save: Control+O.
+Close the file: Control+X
+cd ..
+bash configure
+sudo apt-get install make
+make
+
+Now if we run ls command, the printf statement will appear every time.
+
+*********************************************
+
+###Software Repositories###
+
+1. Main
+2. Universe
+3. Restricted
+4. Multiverse
+
+
+Learn more about "Apt Cache"
+
+
+**********************************************
+
+### Software Installation ###
+sudo apt install software
+sudo apt remove software
+sudo apt update
+sudo apt upgrade
+
+
+Download Source code from packages:
+sudo apt-get install dpkg-dev ---> Install the package
+sudo apt-get install x11-apps
+cd -> into package
+sudo apt-get source <package-name>
+
+
+
+
+
+
+
 
 
