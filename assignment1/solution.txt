@@ -1,0 +1,10 @@
+
+Solution Task 1:
+
+[parth@parth-Lenovo-Y40-70 run]$ ls 1> /home/parth/linuxCourse/Linux/assignment1/file2.txt
+[parth@parth-Lenovo-Y40-70 etc]$ ls 1> /home/parth/linuxCourse/Linux/assignment1/file1.txt
+
+
+Solution Task 2:
+
+[parth@parth-Lenovo-Y40-70 assignment1]$ cat file2.txt 1>> file1.txt 1> unsorted.txt | sort -r unsorted.txt 1> reversed.txt
